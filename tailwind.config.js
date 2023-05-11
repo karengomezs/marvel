@@ -11,6 +11,8 @@ module.exports = {
       "gold-1": "#F0E6D2",
       "gold-2": "#C89B3C",
       "gold-3": "#C89B3C",
+      "gris-3": "#3C3C41",
+      "gris-4": "#1E2328",
     },
     extend: {
       backgroundImage: {
