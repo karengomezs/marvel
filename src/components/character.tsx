@@ -17,11 +17,11 @@ export default function CharacterCard({ img, name, comics, movies }: Props) {
           <img className="h-6" src="/vector2.png" alt="" />
         </div>
 
-        <div className="relative w-32 flex justify-center">
-          <img className="" src="/diamonds.png" alt="" />
+        <div className="animation-rotate relative w-44 flex justify-center">
+          <img className="rotate" src="/diamonds.png" alt="" />
           <img
             src="/vectores.png"
-            className="absolute top-8 scale-125  z-10"
+            className="absolute top-2 w-44 h-44 rotate z-10"
             alt=""
           />
           <img
