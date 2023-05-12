@@ -17,14 +17,14 @@ export default function Home() {
             <img className="h-6" src="/vector2.png" alt="" />
           </div>
 
-          <div className="relative">
-            <img className="top-20 h-32 w-32" src="/mask-group.png" alt="" />
+          <div className="relative w-32 flex justify-center">
+            <img className="" src="/diamonds.png" alt="" />
             <img
               src="/vectores.png"
-              className="absolute top-0 scale-125"
+              className="absolute top-8 scale-125  z-10"
               alt=""
             />
-            {/* <img src="/diamonds.png" className="absolute top-0 z-1" alt="" /> */}
+            <img src="/mask-group.png" className="absolute top-8 " alt="" />
           </div>
 
           <div className="flex flex-col gap-5 text-gold-1">
