@@ -4,9 +4,18 @@ import { getCharacters, RootObject, Result } from "@/api/characters";
 import Youtube from "@/components/youtube";
 
 export const getServerSideProps = async () => {
-  //const response = await getCharacters();
+  const urlBase =
+    "http://gateway.marvel.com/v1/public/characters?apikey=7e68f217f38c3e340c4abaa74c28ba0a&hash=16d0e344d494e4430bdefb30fd94e12c&ts=1&limit=12&offset=0";
 
-  return { props: {} };
+  let data;
+  try {
+    const response = await fetch(urlBase);
+
+    data = await response.json();
+  } catch (error) {
+    console.error(error);
+  }
+  return { props: { response: data } };
 };
 
 type PropsT = { response: RootObject | undefined };
@@ -15,6 +24,7 @@ export default function Home(props: PropsT) {
   const [charactersData, setCharactersData] = useState<Result[] | undefined>(
     props.response?.data.results
   );
+
   const [offSet, setOffSet] = useState(props?.response?.data.offset || 0);
   const [counterPage, setCounterPage] = useState<number>(1);
 
