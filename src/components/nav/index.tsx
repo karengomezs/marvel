@@ -20,6 +20,11 @@ export default function Nav() {
           <span className="group-hover:text-gold-2">PERSONAL</span>
         </li>
       </ul>
+
+      <div className="flex gap-8 text-2xl items-center ms-[55%]">
+        <i className="fa-solid fa-bell text-gold-2"></i>
+        <i className="fa-solid fa-gear text-white"></i>
+      </div>
     </nav>
   );
 }
