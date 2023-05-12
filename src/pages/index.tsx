@@ -31,7 +31,10 @@ export default function Home(props: PropsT) {
 
   return (
     <main className="px-16">
-      <div className="flex gap-4">
+      <div className="grid cards gap-4 mt-20">{characters}</div>
+
+      {/* ---------------------- */}
+      <div className="flex gap-4 justify-center">
         <button
           className="bg-gold-2 w-8 h-8 rounded-full"
           onClick={async () => {
@@ -55,8 +58,6 @@ export default function Home(props: PropsT) {
           }}
         >{`>`}</button>
       </div>
-
-      <div className="flex flex-wrap gap-5">{characters}</div>
     </main>
   );
 }

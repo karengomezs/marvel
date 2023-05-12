@@ -7,7 +7,7 @@ interface Props {
 
 export default function CharacterCard({ img, name, comics, movies }: Props) {
   return (
-    <div className="relative w-fit mt-20">
+    <div className="relative w-fit ">
       <img src="/cardbg.png " className="" alt="" />
 
       <div className="absolute z-1 w-full h-full p-8 flex flex-col items-center justify-between top-0">
