@@ -4,18 +4,18 @@ import { getCharacters, RootObject, Result } from "@/api/characters";
 import Youtube from "@/components/youtube";
 
 export const getServerSideProps = async () => {
-  const response = await getCharacters();
+  //const response = await getCharacters();
 
-  return { props: { response } };
+  return { props: {} };
 };
 
-type PropsT = { response: RootObject };
+type PropsT = { response: RootObject | undefined };
 
 export default function Home(props: PropsT) {
   const [charactersData, setCharactersData] = useState<Result[] | undefined>(
-    props.response.data.results
+    props.response?.data.results
   );
-  const [offSet, setOffSet] = useState(props.response.data.offset);
+  const [offSet, setOffSet] = useState(props?.response?.data.offset || 0);
   const [counterPage, setCounterPage] = useState<number>(1);
 
   const characters = charactersData?.map((character) => {
@@ -76,7 +76,7 @@ export default function Home(props: PropsT) {
           disabled={offSet < 1}
         >{`<`}</button>
         <p className="text-gold-2 font-bold">
-          {counterPage} / {Math.ceil(props.response.data.total / 10)}
+          {counterPage} / {Math.ceil((props.response?.data.total || 1) / 10)}
         </p>
         <button
           className="bg-gold-2 w-8 h-8 rounded-full flex justify-center items-center font-bold"
