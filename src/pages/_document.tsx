@@ -24,7 +24,6 @@ export default function Document() {
         />
       </Head>
       <body>
-        <Nav />
         <Main />
 
         <NextScript />

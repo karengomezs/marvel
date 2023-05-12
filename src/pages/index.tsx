@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CharacterCard from "@/components/character";
 import { getCharacters, RootObject, Result } from "@/api/characters";
+import Nav from "@/components/nav";
 import Youtube from "@/components/youtube";
 
 export const getServerSideProps = async () => {
@@ -42,6 +43,7 @@ export default function Home(props: PropsT) {
 
   return (
     <>
+      <Nav />
       <main className="px-16 pt-20 pb-16 relative">
         <img
           className="z-[-1] absolute top-0 left-0 h-full object-cover"

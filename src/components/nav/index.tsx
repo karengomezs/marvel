@@ -1,4 +1,8 @@
+import { useRouter } from "next/router";
+
 export default function Nav() {
+  const router = useRouter();
+
   return (
     <nav className="bg-dark-1 text-gold-1 h-[116px] flex px-16 border-b-1 border-gris-3">
       <img src="/logo.svg" alt="" />
@@ -17,13 +21,13 @@ export default function Nav() {
             src="/vector.png"
             alt=""
           />
-          <span className="group-hover:text-gold-2">PERSONAL</span>
+          <span className="group-hover:text-gold-2">CHARACTERS</span>
         </li>
       </ul>
 
-      <div className="flex gap-8 text-2xl items-center ms-[55%]">
-        <i className="fa-solid fa-bell text-gold-2"></i>
-        <i className="fa-solid fa-gear text-white"></i>
+      <div className="flex gap-8 text-2xl items-center ms-auto">
+        <i className="fa-solid fa-bell text-white hover:text-gold-2"></i>
+        <i className="fa-solid fa-gear text-white hover:text-gold-2"></i>
       </div>
     </nav>
   );
