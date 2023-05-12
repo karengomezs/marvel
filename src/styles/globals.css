@@ -23,7 +23,14 @@
 body {
   font-family: "BeaufortforLOL-Bold";
 }
+.blue-font {
+  color: #24aebd;
+}
 
 .cards {
   grid-template-columns: repeat(auto-fill, minmax(248px, 1fr));
+}
+
+.font-regular {
+  font-family: "Open Sans", sans-serif;
 }
