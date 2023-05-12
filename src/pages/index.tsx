@@ -32,13 +32,12 @@ export default function Home(props: PropsT) {
 
   return (
     <main className="px-16 pt-20 pb-16 bg-gris-4">
-      <Youtube />
       <div className="flex gap-5 text-gold-1 h-48">
         <div className="border-[0.75px] border-gold-2 flex-1">
           <p className="text-center">PROGRESO DE PELÍCULAS PRODUCIDAS</p>
         </div>
-        <div className="border-[0.75px] border-gold-2 w-80">
-          <p>AQUI VIDEO YOUTUBE</p>
+        <div className="border-[0.75px] border-gold-2 w-80 ">
+          <Youtube />
         </div>
         <div className="border-[0.75px] border-gold-2 w-80">
           <img
