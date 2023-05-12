@@ -7,7 +7,7 @@ export const myFont = localFont({ src: "../../public/my-font.woff2" });
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <main className={myFont.className}>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </main>
   );
 }

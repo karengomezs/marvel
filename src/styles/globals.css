@@ -10,6 +10,16 @@
   transform: rotate(-180deg);
 }
 
+.progress-bar {
+  background: linear-gradient(
+    180deg,
+    #31969d 0%,
+    #65e6f4 31.77%,
+    #24aebd 66.15%,
+    #1299a8 98.96%
+  );
+}
+
 body {
   font-family: "BeaufortforLOL-Bold";
 }
