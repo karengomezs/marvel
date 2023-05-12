@@ -65,12 +65,15 @@ interface Thumbnail {
   extension: string;
 }
 
-const url =
-  "http://gateway.marvel.com/v1/public/characters?apikey=7e68f217f38c3e340c4abaa74c28ba0a&hash=16d0e344d494e4430bdefb30fd94e12c&ts=1&limit=10&offset=10";
+const urlBase =
+  "http://gateway.marvel.com/v1/public/characters?apikey=7e68f217f38c3e340c4abaa74c28ba0a&hash=16d0e344d494e4430bdefb30fd94e12c&ts=1&limit=10&offset=";
 
-export async function getCharacters() {
+export async function getCharacters(offset = 0) {
   try {
+    const url = `${urlBase}${offset}`;
     const response = await fetch(url);
+    console.log(url);
+
     const data: RootObject = await response.json();
     return data;
   } catch (error) {

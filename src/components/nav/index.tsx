@@ -4,10 +4,10 @@ export default function Nav() {
       <img src="/logo.svg" alt="" />
       <ul className="flex ">
         <li className="w-[114px] flex items-center justify-center hover-nav group">
-          <span className="group-hover:text-gold-3">HOME</span>
+          <span className="group-hover:text-gold-2">HOME</span>
         </li>
         <li className="w-[114px] flex items-center justify-center hover-nav group">
-          <span className="group-hover:text-gold-3 ">PERSONAL</span>
+          <span className="group-hover:text-gold-2 ">PERSONAL</span>
         </li>
       </ul>
     </nav>
