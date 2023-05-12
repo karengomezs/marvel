@@ -1,8 +1,11 @@
 interface Props {
   img: string;
+  name: string;
+  comics: number;
+  movies: number;
 }
 
-export default function CharacterCard({ img }: Props) {
+export default function CharacterCard({ img, name, comics, movies }: Props) {
   return (
     <div className="relative w-fit mt-20">
       <img src="/cardbg.png " className="" alt="" />
@@ -10,9 +13,7 @@ export default function CharacterCard({ img }: Props) {
       <div className="absolute z-1 w-full h-full p-8 flex flex-col items-center justify-between top-0">
         <div className="flex justify-center items-center text-gold-1 ">
           <img className="h-6" src="/vector1.png" alt="" />
-          <p className="text-center mx-3">
-            PERSONAJE <br /> NAME
-          </p>
+          <p className="text-center mx-3">{name}</p>
           <img className="h-6" src="/vector2.png" alt="" />
         </div>
 
@@ -25,7 +26,7 @@ export default function CharacterCard({ img }: Props) {
           />
           <img
             src={img}
-            className="absolute top-8 w-32 h-32 rounded-full "
+            className="absolute top-8 w-32 h-32 rounded-full object-cover"
             alt=""
           />
         </div>
@@ -33,12 +34,12 @@ export default function CharacterCard({ img }: Props) {
         <div className="flex flex-col gap-5 text-gold-1">
           <div className="w-44 h-12 rounded-lg border-[0.75px] border-gris-3 bg-gris-4 flex items-center">
             <p className="ms-4 ">
-              Comics: <span className="ms-4">25</span>
+              Comics: <span className="ms-4">{comics}</span>
             </p>
           </div>
           <div className="w-44 h-12 rounded-lg border-[0.75px] border-gris-3 bg-gris-4 flex items-center">
             <p className="ms-4 ">
-              Movies: <span className="ms-4">25</span>
+              Movies: <span className="ms-4">{movies}</span>
             </p>
           </div>
         </div>

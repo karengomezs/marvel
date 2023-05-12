@@ -17,6 +17,9 @@ export default function Home(props: PropsT) {
       <CharacterCard
         key={character.id}
         img={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+        name={character.name}
+        comics={character.comics.available}
+        movies={character.stories.available}
       />
     );
   });
