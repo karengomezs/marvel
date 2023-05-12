@@ -67,7 +67,7 @@ interface Thumbnail {
 
 export async function getCharacters(offset = 0) {
   try {
-    const url = `/api/characters`;
+    const url = `/api/characters?offset=${offset}`;
     const response = await fetch(url);
     const data: RootObject = await response.json();
     return data;

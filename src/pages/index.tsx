@@ -68,7 +68,7 @@ export default function Home(props: PropsT) {
         <button
           className="bg-gold-2 w-8 h-8 rounded-full flex justify-center items-center font-bold"
           onClick={async () => {
-            const response = await getCharacters(offSet - 10);
+            const response = await getCharacters(offSet - 12);
             setOffSet(response?.data.offset || 0);
             setCounterPage(counterPage - 1);
             setCharactersData(response?.data.results);
@@ -81,7 +81,7 @@ export default function Home(props: PropsT) {
         <button
           className="bg-gold-2 w-8 h-8 rounded-full flex justify-center items-center font-bold"
           onClick={async () => {
-            const response = await getCharacters(offSet + 10);
+            const response = await getCharacters(offSet + 12);
             setOffSet(response?.data.offset || 0);
             setCounterPage(counterPage + 1);
             setCharactersData(response?.data.results);
