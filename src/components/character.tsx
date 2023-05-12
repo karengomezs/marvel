@@ -34,12 +34,12 @@ export default function CharacterCard({ img, name, comics, movies }: Props) {
         <div className="flex flex-col gap-5 text-gold-1">
           <div className="w-44 h-12 rounded-lg border-[0.75px] border-gris-3 bg-gris-4 flex items-center">
             <p className="ms-4 ">
-              Comics: <span className="ms-4">{comics}</span>
+              Comics: <span className="ms-4 text-2xl">{comics}</span>
             </p>
           </div>
           <div className="w-44 h-12 rounded-lg border-[0.75px] border-gris-3 bg-gris-4 flex items-center">
             <p className="ms-4 ">
-              Movies: <span className="ms-4">{movies}</span>
+              Movies: <span className="ms-4 text-2xl"> {movies}</span>
             </p>
           </div>
         </div>
