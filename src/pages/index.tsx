@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CharacterCard from "@/components/character";
 import { getCharacters, RootObject, Result } from "@/api/characters";
+import Youtube from "@/components/youtube";
 
 export const getServerSideProps = async () => {
   const response = await getCharacters();
@@ -30,7 +31,23 @@ export default function Home(props: PropsT) {
   });
 
   return (
-    <main className="px-16 pb-16">
+    <main className="px-16 pt-20 pb-16 bg-gris-4">
+      <Youtube />
+      <div className="flex gap-5 text-gold-1 h-48">
+        <div className="border-[0.75px] border-gold-2 flex-1">
+          <p className="text-center">PROGRESO DE PELÍCULAS PRODUCIDAS</p>
+        </div>
+        <div className="border-[0.75px] border-gold-2 w-80">
+          <p>AQUI VIDEO YOUTUBE</p>
+        </div>
+        <div className="border-[0.75px] border-gold-2 w-80">
+          <img
+            className="h-full object-cover"
+            src="https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2018/12/infinity-war.jpg?fit=1000%2C563&quality=50&strip=all&ssl=1"
+            alt=""
+          />
+        </div>
+      </div>
       <div className="grid cards gap-4 mt-20">{characters}</div>
 
       {/* ---------------------- */}
