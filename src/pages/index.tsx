@@ -40,7 +40,7 @@ export default function Home(props: PropsT) {
           <p className="font-regular text-xs text-gold-2 pe-[10%] text-right">
             Production Goals: <br /> 100 movies
           </p>
-          <div className="border-2 border-gold-2 w-[80%] h-8 mx-auto p-1 m-2">
+          <div className="border-2 border-gold-2 w-[80%] h-8 mx-auto p-1 m-2 skew">
             <div className="bg-gold-1 m-auto w-full h-full">
               <div className="progress-bar w-[60%] h-full"></div>
             </div>
