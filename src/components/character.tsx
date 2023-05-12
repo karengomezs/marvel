@@ -1,4 +1,8 @@
-export default function CharacterCard() {
+interface Props {
+  img: string;
+}
+
+export default function CharacterCard({ img }: Props) {
   return (
     <div className="relative w-fit mt-20">
       <img src="/cardbg.png " className="" alt="" />
@@ -19,7 +23,11 @@ export default function CharacterCard() {
             className="absolute top-8 scale-125  z-10"
             alt=""
           />
-          <img src="/mask-group.png" className="absolute top-8 " alt="" />
+          <img
+            src={img}
+            className="absolute top-8 w-32 h-32 rounded-full "
+            alt=""
+          />
         </div>
 
         <div className="flex flex-col gap-5 text-gold-1">
@@ -30,7 +38,7 @@ export default function CharacterCard() {
           </div>
           <div className="w-44 h-12 rounded-lg border-[0.75px] border-gris-3 bg-gris-4 flex items-center">
             <p className="ms-4 ">
-              Comics: <span className="ms-4">25</span>
+              Movies: <span className="ms-4">25</span>
             </p>
           </div>
         </div>
