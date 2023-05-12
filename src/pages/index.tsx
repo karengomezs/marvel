@@ -2,6 +2,7 @@ import { useState } from "react";
 import CharacterCard from "@/components/character";
 import { getCharacters, RootObject, Result } from "@/api/characters";
 import Youtube from "@/components/youtube";
+import { myFont } from "@/styles/font";
 
 export const getServerSideProps = async () => {
   const response = await getCharacters();
@@ -47,6 +48,7 @@ export default function Home(props: PropsT) {
           />
         </div>
       </div>
+      {/* ---------------------- */}
       <div className="grid cards gap-4 mt-20">{characters}</div>
 
       {/* ---------------------- */}
