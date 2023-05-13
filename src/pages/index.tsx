@@ -86,14 +86,11 @@ export default function Home(props: PropsT) {
           src="/fondo.png"
           alt=""
         />
-        {/* -------------------------------------------- */}
 
         <Anounces />
 
-        {/* ---------------------- */}
         <div className="grid cards gap-4 mt-20">{characters}</div>
 
-        {/* ---------------------- */}
         <div className="flex gap-4 justify-center items-center mt-10">
           <button
             className="bg-gold-2 w-8 h-8 rounded-full flex justify-center items-center font-bold"
@@ -118,8 +115,6 @@ export default function Home(props: PropsT) {
             }}
           >{`>`}</button>
         </div>
-
-        {/* ------------------------------------------------------------------------------------------------ */}
       </main>
 
       <dialog
