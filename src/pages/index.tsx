@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 import CharacterCard from "@/components/character";
 import { getCharacters, RootObject, Result } from "@/api/characters";
 import Nav from "@/components/nav";
@@ -52,8 +53,6 @@ export default function Home(props: PropsT) {
     );
   });
 
-  console.log({ clickedCharacter });
-
   return (
     <>
       <Nav />
@@ -97,50 +96,74 @@ export default function Home(props: PropsT) {
         </div>
 
         {/* ------------------------------------------------------------------------------------------------ */}
+      </main>
 
-        <dialog
-          open={modal}
-          className="w-[40%] p-4 rounded-lg border-2 border-gold-2"
-        >
+      <dialog
+        open={modal}
+        className="w-[40%] p-6 rounded-lg border-[0.75px] border-gold-2 absolute bottom-[30%] bg-gris-4"
+      >
+        <div className="text-right">
           <i
             onClick={() => {
               setModal(false);
             }}
-            className="fa-solid fa-x"
+            className="fa-solid fa-circle-xmark text-gold-2 text-2xl"
           ></i>
-          <div className="flex flex-col gap-4">
-            <div className="flex gap-4">
-              <img
-                className="w-40 h-40 rounded-full object-cover"
-                src={`${clickedCharacter?.thumbnail.path}.${clickedCharacter?.thumbnail.extension}`}
-                alt=""
-              />
+        </div>
 
-              <div className="">
-                <p className="text-xl">{clickedCharacter?.name}</p>
-                <p className="text-justify mt-2">
-                  {clickedCharacter?.description}
-                </p>
-              </div>
-            </div>
+        <div className="flex flex-col gap-5">
+          <div className="flex gap-5">
+            <img
+              className="w-40 h-40 rounded-full object-cover"
+              src={`${clickedCharacter?.thumbnail.path}.${clickedCharacter?.thumbnail.extension}`}
+              alt=""
+            />
 
-            <div className="flex gap-6">
-              <p>
-                <span className="text-gold-2"> Comics: </span>
-                {clickedCharacter?.comics.available}
-              </p>
-              <p>
-                <span className="text-gold-2"> Events: </span>
-                {clickedCharacter?.events.available}
-              </p>
-              <p>
-                <span className="text-gold-2"> Series: </span>
-                {clickedCharacter?.series.available}
+            <div className="">
+              <p className="text-xl text-gold-2">{clickedCharacter?.name}</p>
+              <p className="text-justify mt-2 font-sans text-gold-1">
+                {clickedCharacter?.description || "Not available description"}
               </p>
             </div>
           </div>
-        </dialog>
-      </main>
+
+          <div className="flex gap-3">
+            <p>
+              <span className="text-gold-2"> Comics: </span>
+              <span className="text-gold-1">
+                {clickedCharacter?.comics.available}
+              </span>
+            </p>
+            <p>
+              <span className="text-gold-2"> Events: </span>
+              <span className="text-gold-1">
+                {clickedCharacter?.events.available}
+              </span>
+            </p>
+            <p>
+              <span className="text-gold-2"> Series: </span>
+              <span className="text-gold-1">
+                {clickedCharacter?.series.available}
+              </span>
+            </p>
+            <link rel="stylesheet" href="" />
+
+            {clickedCharacter?.urls.map((url) => {
+              return (
+                <Link
+                  className="text-gold-2 underline text-base capitalize"
+                  key={url.url}
+                  rel="stylesheet"
+                  href={url.url}
+                >
+                  {url.type}
+                  <i className="fa-solid fa-arrow-up-right-from-square ms-1 text-sm"></i>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </dialog>
     </>
   );
 }

@@ -30,7 +30,7 @@ export default function CharacterCard({
           <img className="rotate" src="/diamonds.png" alt="" />
           <img
             src="/vectores.png"
-            className="absolute top-2 w-44 h-44 rotate z-10"
+            className="absolute top-2 w-44 h-44 rotate z-1"
             alt=""
           />
           <img
