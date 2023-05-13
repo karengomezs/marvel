@@ -27,7 +27,14 @@ export default function Home(props: PropsT) {
   );
 
   const [offSet, setOffSet] = useState(props?.response?.data.offset || 0);
+
   const [counterPage, setCounterPage] = useState<number>(1);
+
+  const [modal, setModal] = useState<boolean>(false);
+
+  const [clickedCharacter, setClickedCharacter] = useState<
+    Result | undefined
+  >();
 
   const characters = charactersData?.map((character) => {
     return (
@@ -36,10 +43,16 @@ export default function Home(props: PropsT) {
         img={`${character.thumbnail.path}.${character.thumbnail.extension}`}
         name={character.name}
         comics={character.comics.available}
-        movies={character.stories.available}
+        movies={character.series.available}
+        onclick={() => {
+          setModal(true);
+          setClickedCharacter(character);
+        }}
       />
     );
   });
+
+  console.log({ clickedCharacter });
 
   return (
     <>
@@ -82,6 +95,51 @@ export default function Home(props: PropsT) {
             }}
           >{`>`}</button>
         </div>
+
+        {/* ------------------------------------------------------------------------------------------------ */}
+
+        <dialog
+          open={modal}
+          className="w-[40%] p-4 rounded-lg border-2 border-gold-2"
+        >
+          <i
+            onClick={() => {
+              setModal(false);
+            }}
+            className="fa-solid fa-x"
+          ></i>
+          <div className="flex flex-col gap-4">
+            <div className="flex gap-4">
+              <img
+                className="w-40 h-40 rounded-full object-cover"
+                src={`${clickedCharacter?.thumbnail.path}.${clickedCharacter?.thumbnail.extension}`}
+                alt=""
+              />
+
+              <div className="">
+                <p className="text-xl">{clickedCharacter?.name}</p>
+                <p className="text-justify mt-2">
+                  {clickedCharacter?.description}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-6">
+              <p>
+                <span className="text-gold-2"> Comics: </span>
+                {clickedCharacter?.comics.available}
+              </p>
+              <p>
+                <span className="text-gold-2"> Events: </span>
+                {clickedCharacter?.events.available}
+              </p>
+              <p>
+                <span className="text-gold-2"> Series: </span>
+                {clickedCharacter?.series.available}
+              </p>
+            </div>
+          </div>
+        </dialog>
       </main>
     </>
   );
