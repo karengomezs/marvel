@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function Nav() {
   const router = useRouter();
@@ -33,6 +34,12 @@ export default function Nav() {
       <div className="flex gap-8 text-2xl items-center ms-auto">
         <i className="fa-solid fa-bell text-white hover:text-gold-2"></i>
         <i className="fa-solid fa-gear text-white hover:text-gold-2"></i>
+        <Link href="https://github.com/karengomezs/marvel" target="_blank">
+          <i className="fa-brands fa-github hover:text-gold-2"></i>
+        </Link>
+        <Link href="https://karengomez.netlify.app/" target="_blank">
+          <i className="fa-solid fa-user hover:text-gold-2"></i>
+        </Link>
       </div>
     </nav>
   );

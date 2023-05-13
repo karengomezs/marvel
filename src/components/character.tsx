@@ -16,7 +16,7 @@ export default function CharacterCard({
   onclick,
 }: Props) {
   return (
-    <div className="relative w-fit " onClick={onclick}>
+    <div className="relative w-fit cursor-pointer" onClick={onclick}>
       <img src="/cardbg.png " className="" alt="" />
 
       <div className="absolute z-1 w-full h-full p-8 flex flex-col items-center justify-between top-0">
