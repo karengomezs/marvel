@@ -68,7 +68,7 @@ interface Thumbnail {
 export async function getCharacters(offset = 0) {
   try {
     const url = `/api/characters?offset=${offset}`;
-    const response = await fetch(url);
+    const response = await fetch(url); //el response es la repsuesta de la serverless function
     const data: RootObject = await response.json();
     return data;
   } catch (error) {
