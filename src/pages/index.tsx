@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef, RefObject } from "react";
 import Link from "next/link";
 import CharacterCard from "@/components/character";
 import { getCharacters, RootObject, Result } from "@/api/characters";
@@ -22,7 +22,27 @@ export const getServerSideProps = async () => {
 
 type PropsT = { response: RootObject | undefined };
 
+function useOutsideAlerter(
+  ref: RefObject<HTMLDialogElement>,
+  callback: () => void
+) {
+  useEffect(() => {
+    function handleClickOutside(event: any) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        callback();
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [ref]);
+}
+
 export default function Home(props: PropsT) {
+  const wrapperRef = useRef<HTMLDialogElement>(null);
+
   const [charactersData, setCharactersData] = useState<Result[] | undefined>(
     props.response?.data.results
   );
@@ -36,6 +56,10 @@ export default function Home(props: PropsT) {
   const [clickedCharacter, setClickedCharacter] = useState<
     Result | undefined
   >();
+
+  useOutsideAlerter(wrapperRef, () => {
+    setModal(false);
+  });
 
   const characters = charactersData?.map((character) => {
     return (
@@ -99,6 +123,7 @@ export default function Home(props: PropsT) {
       </main>
 
       <dialog
+        ref={wrapperRef}
         open={modal}
         className="w-[40%] p-6 rounded-lg border-[0.75px] border-gold-2 absolute bottom-[30%] bg-gris-4"
       >
