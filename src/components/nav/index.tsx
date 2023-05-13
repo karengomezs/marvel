@@ -16,7 +16,11 @@ export default function Nav() {
           <span className="group-hover:text-gold-2">HOME</span>
         </li>
 
-        <li className="w-[114px] flex items-center justify-center hover-nav group">
+        <li
+          className={`w-[114px] flex items-center justify-center  group ${
+            router.pathname === "/" ? "hover-nav" : ""
+          }`}
+        >
           <img
             className="absolute bottom-0 hidden group-hover:block"
             src="/vector.png"
@@ -24,11 +28,6 @@ export default function Nav() {
           />
           <span className="group-hover:text-gold-2">CHARACTERS</span>
         </li>
-
-        {/* <li className="w-[114px] flex items-center justify-center group relative">
-          <img className="absolute bottom-0 hidden" src="/vector.png" alt="" />
-          <span className="group-hover:text-gold-2">CHARACTERS</span>
-        </li> */}
       </ul>
 
       <div className="flex gap-8 text-2xl items-center ms-auto">
