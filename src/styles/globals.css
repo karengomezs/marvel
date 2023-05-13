@@ -2,15 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-.hover-nav:hover {
+.hover-nav {
   background: linear-gradient(180deg, #231f20 0%, rgba(34, 34, 34, 0) 100%);
   transform: rotate(-180deg);
 }
-.hover-nav:hover span {
+.hover-nav span {
   transform: rotate(-180deg);
 }
 
-.hover-nav:hover img {
+.hover-nav img {
+  display: block;
   transform: rotate(-180deg);
 }
 
