@@ -52,9 +52,7 @@ export default function Home(props: PropsT) {
         />
         <div className="flex gap-5 text-gold-1 h-48">
           <div className="border-[0.75px] border-gold-2 flex-1 rounded-md">
-            <p className="text-center mt-7 mb-3">
-              PROGRESO DE PELÍCULAS PRODUCIDAS
-            </p>
+            <p className="text-center mt-7 mb-3">PROGRESS OF PRODUCED FILMS</p>
             <p className="font-regular text-xs text-gold-2 pe-[10%] text-right">
               Production Goals: <br /> 100 movies
             </p>
