@@ -94,7 +94,7 @@ export default function Home(props: PropsT) {
             disabled={offSet < 1}
           >{`<`}</button>
           <p className="text-gold-2 font-bold">
-            {counterPage} / {Math.ceil((props.response?.data.total || 1) / 10)}
+            {counterPage} / {Math.ceil((props.response?.data.total || 1) / 12)}
           </p>
           <button
             className="bg-gold-2 w-8 h-8 rounded-full flex justify-center items-center font-bold"
