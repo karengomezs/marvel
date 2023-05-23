@@ -120,7 +120,7 @@ export default function Home(props: PropsT) {
       <dialog
         ref={wrapperRef}
         open={modal}
-        className="w-[40%] p-6 rounded-lg border-[0.75px] border-gold-2 absolute bottom-[30%] bg-gris-4"
+        className="w-[40%] p-6 rounded-lg border-[0.75px] border-gold-2 fixed bottom-[30%] bg-gris-4"
       >
         <div className="text-right">
           <i
