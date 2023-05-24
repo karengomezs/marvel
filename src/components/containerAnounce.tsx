@@ -2,8 +2,9 @@ import Youtube from "@/components/youtube";
 
 export default function Anounces() {
   return (
-    <div className="flex gap-5 text-gold-1 h-48">
-      <div className="border-[0.75px] border-gold-2 flex-1 rounded-md">
+    <div className="flex flex-col items-center lg:flex-row gap-5 text-gold-1 h-48">
+      {/* progress */}
+      <div className="border-[0.75px] border-gold-2 sm:flex-1 rounded-md px-10 pb-7">
         <p className="text-center mt-7 mb-3">PROGRESS OF PRODUCED FILMS</p>
         <p className="font-regular text-xs text-gold-2 pe-[10%] text-right">
           Production Goals: <br /> 100 movies
@@ -17,9 +18,11 @@ export default function Anounces() {
           Produced Movies: <br /> 60 Movies
         </p>
       </div>
+      {/* youtube */}
       <div className="border-[0.75px] border-gold-2 w-80 rounded-sm">
         <Youtube />
       </div>
+      {/* imagen div */}
       <div className="border-[0.75px] border-gold-2 w-80 rounded-sm">
         <img
           className="h-full object-cover"
