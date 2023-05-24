@@ -3,7 +3,7 @@ import Link from "next/link";
 import CharacterCard from "@/components/character";
 import { getCharacters, RootObject, Result } from "@/api/characters";
 import Nav from "@/components/nav";
-import Anounces from "@/components/containerAnounce";
+import Anounces from "@/components/anounce";
 
 export const getServerSideProps = async () => {
   const limit = 12;
