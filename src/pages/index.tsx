@@ -80,7 +80,7 @@ export default function Home(props: PropsT) {
   return (
     <>
       <Nav />
-      <main className="p-4 md:px-16 md:pt-20 md:pb-16 relative">
+      <main className="px-4 md:px-16 md:pt-20 md:pb-16 relative">
         <img
           className="z-[-1] absolute top-0 left-0 h-full object-cover"
           src="/fondo.png"
@@ -89,7 +89,7 @@ export default function Home(props: PropsT) {
 
         <Anounces />
 
-        <div className="grid cards gap-4 mt-20 justify-items-center">
+        <div className="grid cards gap-4 mt-10 md:mt-20 justify-items-center">
           {characters}
         </div>
 
