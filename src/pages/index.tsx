@@ -6,8 +6,10 @@ import Nav from "@/components/nav";
 import Anounces from "@/components/containerAnounce";
 
 export const getServerSideProps = async () => {
-  const urlBase =
-    "http://gateway.marvel.com/v1/public/characters?apikey=7e68f217f38c3e340c4abaa74c28ba0a&hash=16d0e344d494e4430bdefb30fd94e12c&ts=1&limit=12&offset=0";
+  const limit = 12;
+  const offset = 0;
+
+  const urlBase = `${process.env.API}/characters?apikey=${process.env.API_KEY}&hash=${process.env.HASH}&ts=${process.env.TS}&limit=${limit}&offset=${offset}`;
 
   let data;
   try {
