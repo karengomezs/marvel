@@ -82,7 +82,7 @@ export default function Home(props: PropsT) {
   return (
     <>
       <Nav />
-      <main className="px-4 md:px-16 lg:pt-20 md:py-10 relative ">
+      <main className="px-4 md:px-16 lg:pt-20 py-10 relative ">
         <img
           className="z-[-1] absolute top-0 left-0 h-full object-cover"
           src="/fondo.png"
