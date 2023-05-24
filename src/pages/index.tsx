@@ -82,7 +82,7 @@ export default function Home(props: PropsT) {
   return (
     <>
       <Nav />
-      <main className="px-4 md:px-16 lg:pt-20 md:py-10 relative">
+      <main className="px-4 md:px-16 lg:pt-20 md:py-10 relative ">
         <img
           className="z-[-1] absolute top-0 left-0 h-full object-cover"
           src="/fondo.png"
@@ -125,7 +125,7 @@ export default function Home(props: PropsT) {
       <dialog
         ref={wrapperRef}
         open={modal}
-        className="w-[40%] p-6 rounded-lg border-[0.75px] border-gold-2 fixed bottom-[30%] bg-gris-4"
+        className="w-[70%] max-w-2xl max-h-[500px] overflow-auto sm:w-fit p-6 rounded-lg border-[0.75px] border-gold-2 fixed top-32 bg-gris-4"
       >
         <div className="text-right">
           <i
@@ -137,7 +137,7 @@ export default function Home(props: PropsT) {
         </div>
 
         <div className="flex flex-col gap-5">
-          <div className="flex gap-5">
+          <div className="flex flex-col sm:flex-row gap-5">
             <img
               className="w-40 h-40 rounded-full object-cover"
               src={`${clickedCharacter?.thumbnail.path}.${clickedCharacter?.thumbnail.extension}`}
@@ -152,7 +152,7 @@ export default function Home(props: PropsT) {
             </div>
           </div>
 
-          <div className="flex gap-3">
+          <div className="flex flex-col sm:flex-row gap-3">
             <p>
               <span className="text-gold-2"> Comics: </span>
               <span className="text-gold-1">
