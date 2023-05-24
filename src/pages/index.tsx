@@ -89,7 +89,9 @@ export default function Home(props: PropsT) {
 
         <Anounces />
 
-        <div className="grid cards gap-4 mt-20">{characters}</div>
+        <div className="grid cards gap-4 mt-20 justify-items-center">
+          {characters}
+        </div>
 
         <div className="flex gap-4 justify-center items-center mt-10">
           <button
