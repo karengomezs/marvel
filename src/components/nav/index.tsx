@@ -10,7 +10,7 @@ export default function Nav() {
     <>
       <nav className="bg-dark-1 text-gold-1 h-[116px] flex md:px-16 border-b-1 border-gris-3">
         {/* <div className="flex flex-col"> */}
-        <img src="/logo.svg" className="h-full" alt="" />
+        <img src="/logo.svg" className="h-20 my-auto ml-8 md:h-full" alt="" />
 
         <ul className="md:flex hidden">
           <li className="w-[114px] flex items-center justify-center group ">
