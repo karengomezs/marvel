@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef, RefObject } from "react";
 import Link from "next/link";
-import CharacterCard from "@/components/character";
 import { getCharacters, RootObject, Result } from "@/api/characters";
+import CharacterCard from "@/components/character";
 import Nav from "@/components/nav";
 import Anounces from "@/components/anounce";
+import { limit } from "@/constant";
 
 export const getServerSideProps = async () => {
-  const limit = 12;
   const offset = 0;
 
   const urlBase = `${process.env.API}/characters?apikey=${process.env.API_KEY}&hash=${process.env.HASH}&ts=${process.env.TS}&limit=${limit}&offset=${offset}`;
@@ -99,7 +99,7 @@ export default function Home(props: PropsT) {
           <button
             className="bg-gold-2 w-8 h-8 rounded-full flex justify-center items-center font-bold"
             onClick={async () => {
-              const response = await getCharacters(offSet - 12);
+              const response = await getCharacters(offSet - limit);
               setOffSet(response?.data.offset || 0);
               setCounterPage(counterPage - 1);
               setCharactersData(response?.data.results);
@@ -107,12 +107,13 @@ export default function Home(props: PropsT) {
             disabled={offSet < 1}
           >{`<`}</button>
           <p className="text-gold-2 font-bold">
-            {counterPage} / {Math.ceil((props.response?.data.total || 1) / 12)}
+            {counterPage} /{" "}
+            {Math.ceil((props.response?.data.total || 1) / limit)}
           </p>
           <button
             className="bg-gold-2 w-8 h-8 rounded-full flex justify-center items-center font-bold"
             onClick={async () => {
-              const response = await getCharacters(offSet + 12);
+              const response = await getCharacters(offSet + limit);
               setOffSet(response?.data.offset || 0);
               setCounterPage(counterPage + 1);
               setCharactersData(response?.data.results);
