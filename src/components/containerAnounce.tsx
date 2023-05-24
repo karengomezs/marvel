@@ -4,8 +4,8 @@ export default function Anounces() {
   return (
     <div className="flex flex-col items-center lg:flex-row gap-5 text-gold-1 h-48">
       {/* progress */}
-      <div className="border-[0.75px] border-gold-2 sm:flex-1 rounded-md px-10 pb-7">
-        <p className="text-center mt-7 mb-3">PROGRESS OF PRODUCED FILMS</p>
+      <div className="border-[0.75px] border-gold-2 w-full flex-1 rounded-md h-full flex flex-col justify-center py-2">
+        <p className="text-center mb-3">PROGRESS OF PRODUCED FILMS</p>
         <p className="font-regular text-xs text-gold-2 pe-[10%] text-right">
           Production Goals: <br /> 100 movies
         </p>
@@ -19,13 +19,13 @@ export default function Anounces() {
         </p>
       </div>
       {/* youtube */}
-      <div className="border-[0.75px] border-gold-2 w-80 rounded-sm">
+      <div className="border-[0.75px] border-gold-2 w-80 h-full p-1 rounded-md flex items-center justify-center bg-dark-1">
         <Youtube />
       </div>
       {/* imagen div */}
-      <div className="border-[0.75px] border-gold-2 w-80 rounded-sm">
+      <div className="border-[0.75px] border-gold-2 w-80 h-full rounded-md ">
         <img
-          className="h-full object-cover"
+          className="object-cover h-full rounded-md"
           src="https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2018/12/infinity-war.jpg?fit=1000%2C563&quality=50&strip=all&ssl=1"
           alt=""
         />
