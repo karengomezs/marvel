@@ -2,7 +2,7 @@ import Youtube from "@/components/youtube";
 
 export default function Anounces() {
   return (
-    <div className="flex flex-col items-center lg:flex-row gap-5 text-gold-1 lg:h-48 mt-10">
+    <div className="flex flex-col items-center lg:flex-row gap-5 text-gold-1 lg:h-48 ">
       {/* progress */}
       <div className="border-[0.75px] border-gold-2 w-full flex-1 rounded-md h-full flex flex-col justify-center py-2">
         <p className="text-center mb-3">PROGRESS OF PRODUCED FILMS</p>

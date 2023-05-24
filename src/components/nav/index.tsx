@@ -38,13 +38,13 @@ export default function Nav() {
         {/* </div> */}
 
         <div className="md:flex gap-8 text-2xl items-center ms-auto hidden">
-          <i className="fa-solid fa-bell text-white hover:text-gold-2"></i>
+          <i className="fa-solid fa-bell text-white hover:text-gold-2 ml-6"></i>
           <i className="fa-solid fa-gear text-white hover:text-gold-2"></i>
           <Link href="https://github.com/karengomezs/marvel" target="_blank">
-            <i className="fa-brands fa-github hover:text-gold-2"></i>
+            <i className="fa-brands fa-github lg:block  hidden hover:text-gold-2"></i>
           </Link>
           <Link href="https://karengomez.netlify.app/" target="_blank">
-            <i className="fa-solid fa-user hover:text-gold-2"></i>
+            <i className="fa-solid fa-user lg:block hidden hover:text-gold-2"></i>
           </Link>
         </div>
         <div className="md:hidden my-auto ml-auto mr-8">
